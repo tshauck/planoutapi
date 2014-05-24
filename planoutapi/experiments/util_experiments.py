@@ -3,8 +3,10 @@ from planout.experiment import SimpleExperiment
 import psycopg2 as pg
 from psycopg2.extras import Json as pJson
 
-CONN_PARAMS = {'database': 'planouttesting',
-               'user': 'trenthauck'}
+CONN_PARAMS = {'database': 'experiments',
+               'user': 'super',
+               'password': 'BnREyrZUGB8zuq57',
+               'host': 'localhost'}
 
 class PostgresLoggedExperiment(SimpleExperiment):
 
