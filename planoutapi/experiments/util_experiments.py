@@ -1,12 +1,14 @@
 from planout.experiment import SimpleExperiment
+import os
 
 import psycopg2 as pg
 from psycopg2.extras import Json as pJson
 
 CONN_PARAMS = {'database': 'experiments',
-               'user': 'super',
-               'password': 'BnREyrZUGB8zuq57',
-               'host': 'localhost'}
+               'user': os.getenv('DB_ENV_USER'),
+               'password': os.getenv('DB_ENV_PASS'),
+               'host': os.getenv('DB_PORT_5432_TCP_ADDR'),
+               'port': os.getenv('DB_PORT_5432_TCP_PORT')}
 
 class PostgresLoggedExperiment(SimpleExperiment):
 

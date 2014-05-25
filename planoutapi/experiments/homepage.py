@@ -15,11 +15,16 @@ class GreetingExperiment(PostgresLoggedExperiment):
 
     def assign(self, params, cookie_id):
         a = "" # no greeting
-        b = "Welcome to Lambda Omega Lambda (LOL), have a look around."
+        b = "Welcome to the blog of Trent Hauck, have a look around."
         c = "Welcome to the blog of Trent Hauck."
 
         params.greeting_text = random.UniformChoice(
             choices=[a, b, c],
+            unit=cookie_id
+        )
+
+        params.style = random.UniformChoice(
+            choices=[True, False],
             unit=cookie_id
         )
 
